@@ -1,0 +1,29 @@
+{
+  "name": "flight-vis",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.2.0",
+    "@tsconfig/svelte": "^5.0.5",
+    "@types/three": "^0.183.1",
+    "svelte": "^5.39.4",
+    "svelte-check": "^4.3.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "date-fns": "^4.1.0",
+    "everpolate": "^0.0.3",
+    "maplibre-gl": "^5.20.1",
+    "tailwindcss": "^4.2.1",
+    "three": "^0.183.2"
+  }
+}
