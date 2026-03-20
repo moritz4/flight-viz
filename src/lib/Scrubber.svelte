@@ -1,6 +1,8 @@
 <script lang="ts">
   import { Timer } from "./scene.svelte";
   import { format } from "date-fns";
+  import { Pause, Play } from "@lucide/svelte";
+
   let { timer }: { timer: Timer } = $props();
 
   let scrubberElement = $state<HTMLElement | null>(null);
@@ -25,22 +27,30 @@
 </script>
 
 <div
-  class="bg-blue-900/50 w-full h-15 flex justify-between items-center px-5 font-mono gap-5 text-amber-100"
+  class="bg-blue-900/50 w-full h-12 flex justify-between items-center px-5 font-mono gap-5 text-amber-100 rounded-lg"
 >
-  <p
+  <div
     class="text-2xl hover:cursor-pointer hover:text-3xl transition-all duration-75 w-6 text-center"
     onclick={() => (timer.playing = !timer.playing)}
   >
-    {timer.playing ? "⏸" : "▶"}
-  </p>
+    {#if timer.playing}
+      <Pause />
+    {:else}
+      <Play />
+    {/if}
+  </div>
+
   <div class="w-full" bind:this={scrubberElement}>
-    <div class="w-full h-1 bg-amber-100 hover:cursor-pointer" onclick={scrubTo}>
-      <div
-        class="rounded-full w-4 h-4 relative bg-amber-100 bottom-1.5 transition-all duration-75"
-        style="left: {playheadPositionX}px;"
-      ></div>
+    <div class="w-full py-3 flex items-center cursor-pointer" onclick={scrubTo}>
+      <div class="w-full h-1 bg-amber-100 relative">
+        <div
+          class="rounded-full w-4 h-4 absolute bg-amber-100 -top-1.5 transition-all duration-75"
+          style="left: {playheadPositionX}px;"
+        ></div>
+      </div>
     </div>
   </div>
+
   <div class="flex flex-col items-center">
     <p>{format(new Date(timer.currentTime * 1000), "HH:mm")}</p>
     <p class="text-xs whitespace-nowrap">

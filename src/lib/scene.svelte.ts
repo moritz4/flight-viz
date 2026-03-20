@@ -282,8 +282,7 @@ export function initScene(scene: THREE.Scene, data: FlightsData) {
     }
   });
 
-  // Loop through first 10 flights by slicing
-  flights.slice(0, 1000).forEach((flight) => {
+  flights.forEach((flight) => {
     scene.add(flight.curveObject);
     scene.add(flight.dot);
   });

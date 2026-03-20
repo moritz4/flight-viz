@@ -30,8 +30,8 @@ export function createMap(
     container: mapContainer, // container id
     style:
       "https://api.maptiler.com/maps/ebc4cdf4-843c-4348-b1d6-6900624f2513/style.json?key=QHR3cDWrfl0JisqI70ry", // style URL
-    zoom: 7,
-    center: [0, 52],
+    zoom: 8.5,
+    center: [0, 51.4],
     pitch: 60,
     bearing: -10,
     maxZoom: 10,

@@ -23,6 +23,14 @@ export async function fetchData() {
     }
   }
 
+  // Console log all flights ordered by the most recent time which appears in the positions array
+  const sortedFlights = Object.entries(data).sort((a, b) => {
+    const aMaxTime = Math.max(...a[1].positions.map((p) => p[0]));
+    const bMaxTime = Math.max(...b[1].positions.map((p) => p[0]));
+    return bMaxTime - aMaxTime;
+  });
+  console.log("Flights sorted by most recent time:", sortedFlights);
+
   return data;
 }
 
@@ -33,9 +41,9 @@ function latLongAltToWorldCoordinates(
 ): { x: number; y: number; z: number } {
   const position = MercatorCoordinate.fromLngLat([long, lat], alt);
   position.x = position.x * 4000 - 2000; // convert to world coordinates
-  position.y = position.y * 4000 - 2000; // convert to world coordinates
+  position.y = position.y * 4000 - 2000 - 0.5; // convert to world coordinates For some reason we need to add a small northern offset
   // Apply sensible conversion factor from alt in feet to world coordinates
-  position.z = position.z * 5000;
+  position.z = position.z * 4000;
 
   return { x: position.x, y: position.y, z: position.z };
 }
