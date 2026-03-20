@@ -39,7 +39,7 @@
 
       timer.startTime = startTime + 60;
       timer.endTime = endTime;
-      timer.currentTime = startTime + 120;
+      timer.currentTime = startTime + 60 * 20;
 
       initScene(scene, data);
 

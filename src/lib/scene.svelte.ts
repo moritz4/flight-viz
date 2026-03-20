@@ -2,7 +2,7 @@ import * as THREE from "three";
 import type { FlightsData } from "./data";
 import { linear } from "everpolate";
 
-const TRAILLENGTH = 10; // approximate trail length in minutes
+const TRAILLENGTH = 20; // approximate trail length in minutes
 const LINEDETAIL = 30; // integer only
 
 // Colours for airports RGBA
