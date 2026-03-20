@@ -21,7 +21,11 @@
       Each follows a precise corridor: fixed airways, stacked holding patterns,
       and tightly sequenced runways.
     </p>
-    <p class="mt-5">Here's what that looked like over the last 24 hours.</p>
+    <p class="mt-5">
+      Here's what that looked like over the <span class="text-red-300"
+        >last 24 hours</span
+      >.
+    </p>
   </div>
   <button
     class="rounded-2xl border px-4 text-xl w-52 {enabled

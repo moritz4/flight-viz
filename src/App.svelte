@@ -62,18 +62,18 @@
     // Start the timer
     timer.playing = true;
     map.easeTo({
-      center: [0, 51.4],
-      zoom: 9,
-      pitch: 70,
-      bearing: -20,
-      duration: 50000,
+      center: [-0.5, 51.4],
+      zoom: 8.3,
+      pitch: 50,
+      bearing: -30,
+      duration: 100000,
       essential: true,
     });
   }
 </script>
 
 <div
-  class="min-h-screen min-w-screen {showIntro ? 'blur-xs' : ''}"
+  class="min-h-screen min-w-screen {showIntro ? 'blur-xs scale-[1.03]' : ''}"
   bind:this={mapContainer}
 ></div>
 
