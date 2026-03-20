@@ -62,11 +62,11 @@
     // Start the timer
     timer.playing = true;
     map.easeTo({
-      center: [-0.5, 51.4],
-      zoom: 8.3,
-      pitch: 50,
+      center: [-0.5, 51.5],
+      zoom: 7.4,
+      pitch: 60,
       bearing: -30,
-      duration: 100000,
+      duration: 200000,
       essential: true,
     });
   }
