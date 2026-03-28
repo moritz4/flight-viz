@@ -63,10 +63,10 @@
     timer.playing = true;
     map.easeTo({
       center: [-0.5, 51.5],
-      zoom: 7.4,
+      zoom: 7.7,
       pitch: 60,
       bearing: -30,
-      duration: 200000,
+      duration: 60000,
       essential: true,
     });
   }

@@ -2,7 +2,7 @@ import * as THREE from "three";
 import type { FlightsData } from "./data";
 import { linear } from "everpolate";
 
-const TRAILLENGTH = 20; // approximate trail length in minutes
+const TRAILLENGTH = 40; // approximate trail length in minutes
 const LINEDETAIL = 30; // integer only
 
 // Colours for airports RGBA
@@ -232,7 +232,7 @@ export class Timer {
   currentTime: number = $state(0);
   playing = $state(false);
   clock: THREE.Clock;
-  speed: number = $state(200);
+  speed: number = $state(1000);
 
   constructor(start: number, end: number) {
     // Start the timer at the first flight's departure time
